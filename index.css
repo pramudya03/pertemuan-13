@@ -1,0 +1,150 @@
+* {
+	box-sizing: border-box; /* Menyesuaikan box model untuk termasuk padding dan border ke dalam width atau height */
+}
+
+header {
+    display: flex;    /* Menata header dengan flexbox */
+    justify-content: space-between;    /* Menyusun konten header rata dengan jarak antar elemen */
+    align-items: center;        /* Pusatkan konten header secara vertikal */
+    padding: 5px;   /* Padding di sekitar header */
+    background-color: rgba(0, 0, 0, 0.7);       /* Latar belakang hitam dengan transparansi */
+    color: #fff;      /* Warna teks putih */
+    font-size: 9px;    /* Ukuran teks */
+    top: 0;    /* Header di bagian atas layar */
+    position: fixed;    /* Tetap di tempat saat digulir */
+    left: 0;     /* Di sebelah kiri layar */
+    right: 0;    /* Di sebelah kanan layar */
+    text-align: center;    /* Teks di tengah */
+}
+
+nav ul {
+    display: flex;   /* Menata navigasi dengan flexbox */
+    list-style-type: none;   /* Hapus bullet list */
+    margin: 0;   /* Hapus margin */
+    padding: 0;  /* Hapus padding */
+}
+
+nav ul li {
+    margin-right: 20px;   /* Jarak antar elemen navigasi */
+}
+
+nav ul li a {
+    text-decoration: none;   /* Hapus dekorasi tautan */
+    color: white;   /* Warna teks putih */
+}
+
+body {
+	font-family: Montserrat, sans-serif;   /* Jenis font untuk body */
+	display: flex;    /* Menata body dengan flexbox */
+	align-items: center;    /* Pusatkan konten secara vertikal */
+	justify-content: center;    /* Pusatkan konten secara horizontal */
+	flex-direction: column;    /* Konten dalam satu kolom */
+	min-height: 100vh;      /* Tinggi minimum layar */
+	margin: 0;     /* Hapus margin */
+}
+
+#kal {
+  position: fixed;    /* Tetap di posisi */
+  right: 0;    /* Di sebelah kanan layar */
+  bottom: 0;    /* Di bagian bawah layar */
+  min-width: 90%;    /* Lebar minimum 90% dari layar */
+  min-height: 100%;   /* Tinggi minimum 100% dari layar */
+  size: 100%;    /* Ukuran 100% dari layar */
+}
+
+h3 {
+	margin: 10px 0;   /* Margin atas dan bawah 10px */
+}
+
+h6 {
+	margin: 5px 0;   /* Margin atas dan bawah 5px */
+	text-transform: uppercase;    /* Teks menjadi huruf kapital */
+}
+
+p {
+	font-size: 14px;     /* Ukuran teks */
+	line-height: 21px;    /* Tinggi baris */
+}
+
+.card-container {
+    background-color: rgba(0, 0, 0, 0.7);    /* Latar belakang hitam dengan transparansi */
+    border-radius: 5px;     /* Sudut border */
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);    /* Bayangan lembut */
+    color: white;      /* Warna teks putih */
+    padding-top: 30px;   /* Padding atas 30px */
+    position: relative; /* Posisi relatif */
+    width: 350px;       /* Lebar 350px */
+    max-width: 100%;    /* Lebar maksimum 100% dari layar */
+    text-align: center; /* Teks di tengah */
+}
+
+.card-container .pro {
+	color: white;   /* Warna teks putih */
+	background-color: transparent;   /* Latar belakang transparan */
+	border-radius: 3px;      /* Sudut border */
+	font-size: 14px;    /* Ukuran teks */
+	font-weight: bold; /* Ketebalan teks */
+	padding: 3px 7px; /* Padding */
+	position: absolute; /* Posisi absolut */
+	top: 30px; /* 30px dari atas */
+	left: 30px; /* 30px dari kiri */
+}
+
+.card-container .round {
+	border: 1px solid white; /* Border tebal putih */
+	border-radius: 50%; /* Sudut border berbentuk lingkaran */
+	padding: 7px; /* Padding */
+}
+
+button.primary {
+	background-color: white; /* Latar belakang putih */
+	border: 1px solid white; /* Border tebal putih */
+	border-radius: 3px; /* Sudut border */
+	color: black; /* Warna teks hitam */
+	font-family: Montserrat, sans-serif; /* Jenis font */
+	font-weight: 500; /* Ketebalan teks */
+	padding: 10px 25px; /* Padding */
+}
+
+button.primary.ghost {
+	background-color: transparent; /* Latar belakang transparan */
+	color: white; /* Warna teks putih */
+}
+
+.skills {
+	background-color: transparent; /* Latar belakang transparan */
+	text-align: left; /* Teks di kiri */
+	padding: 15px; /* Padding */
+	margin-top: 30px; /* Margin atas 30px */
+}
+
+.skills ul {
+	list-style-type: none; /* Hapus bullet list */
+	margin: 0; /* Hapus margin */
+	padding: 0; /* Hapus padding */
+}
+
+.skills ul li {
+	border: 1px solid #F2E3DB; /* Border tipis putih */
+	border-radius: 2px; /* Sudut border */
+	display: inline-block; /* Tampil dalam bentuk inline block */
+	font-size: 12px; /* Ukuran teks */
+	margin: 0 7px 7px 0; /* Margin */
+	padding: 7px; /* Padding */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam dengan transparansi */
+    color: #fff; /* Warna teks putih */
+    font-size: 14px; /* Ukuran teks */
+    bottom: 0; /* Di bagian bawah layar */
+    position: fixed; /* Tetap di tempat saat digulir */
+    left: 0; /* Di sebelah kiri layar */
+    right: 0; /* Di sebelah kanan layar */
+    text-align: center; /* Teks di tengah */
+    z-index: 999; /* Z-index */
+}
+
+footer p {
+    margin: 10px; /* Margin */
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="booking.css"> <!-- Menyertakan file CSS untuk gaya -->
+    <video autoplay muted loop id="background-video"> <!-- Video latar belakang -->
+        <source src="bg2.mp4" type="video/mp4">
+    </video>
+    <header> <!-- Bagian header dengan judul dan navigasi -->
+        <h1>SUNSHINE HOTEL</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">LOBBY</a></li>
+                <li><a href="booking.html">RESERVASI</a></li>
+                <li><a href="kamar.html">KETERSEDIAAN KAMAR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <title>Booking Room</title>
+</head>
+<body>
+    <div class="card"> <!-- Kartu untuk form pemesanan -->
+        <h2>Booking Room</h2>
+        <form id="booking-form">
+            <div class="form-group"> <!-- Grup form untuk nama -->
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group"> <!-- Grup form untuk email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group"> <!-- Grup form untuk jenis kamar -->
+                <label for="service">Jenis Kamar:</label>
+                <select id="service" name="service" required>
+                    <option value="Standard">Standard</option>
+                    <option value="Superior">Superior</option>
+                    <option value="Suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group"> <!-- Grup form untuk tanggal check-in -->
+                <label for="checkin">Tanggal Check-in:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group"> <!-- Grup form untuk tanggal check-out -->
+                <label for="checkout">Tanggal Check-out:</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-group"> <!-- Tombol untuk mengirimkan form -->
+                <input type="submit" value="Booking">
+            </div>
+        </form>
+    </div>
+
+    <div class="card"> <!-- Kartu untuk output Booking-->
+        <div class="output">
+            <h3>Booking:</h3>
+            <div id="queue-container"></div> <!-- Kontainer untuk menampilkan Booking -->
+            <button id="download-btn" style="display: none;">Download</button> <!-- Tombol untuk mengunduh bukti booking yang akan ditampilkan jika diperlukan -->
+        </div>
+    </div>
+
+    <footer> <!-- Bagian footer hak cipta -->
+        <p>&copy; 2024 Sunshine. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mendapatkan referensi elemen-elemen yang diperlukan dari dokumen
+        const form = document.getElementById("booking-form"); // Form pemesanan
+        const queueContainer = document.getElementById("queue-container"); // Kontainer untuk menampilkan antrian
+        const downloadBtn = document.getElementById("download-btn"); // Tombol untuk mengunduh
+    
+        // Array untuk menyimpan antrian pemesanan
+        let queue = [];
+    
+        // Event listener untuk form saat disubmit
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form untuk melakukan pengiriman default
+    
+            // Mendapatkan nilai dari input form
+            const name = document.getElementById("name").value; // Nama
+            const email = document.getElementById("email").value; // Email
+            const service = document.getElementById("service").value; // Jenis Kamar
+            const checkin = document.getElementById("checkin").value; // Tanggal Check-in
+            const checkout = document.getElementById("checkout").value; // Tanggal Check-out
+    
+            // Objek pemesanan baru
+            const booking = {
+                name: name,
+                email: email,
+                service: service,
+                checkin: checkin,
+                checkout: checkout
+            };
+    
+            // Menambahkan objek pemesanan ke dalam array antrian
+            queue.push(booking);
+    
+            // Memanggil fungsi untuk menampilkan antrian terbaru
+            displayQueue();
+    
+            // Menampilkan tombol download
+            downloadBtn.style.display = "block";
+    
+            // Mereset form setelah pengisian
+            form.reset();
+        });
+    
+        // Event listener untuk tombol download
+        downloadBtn.addEventListener("click", function() {
+            // Menghasilkan teks antrian pemesanan
+            const queueText = generateQueueText();
+    
+            // Membuat file teks dengan Blob
+            const textFile = new Blob([queueText], { type: "text/plain" });
+    
+            // Nama file untuk diunduh
+            const fileName = "Bukti Pemesanan Kamar.txt";
+    
+            // Membuat elemen anchor untuk menampung file yang akan diunduh
+            const downloadLink = document.createElement("a");
+            downloadLink.download = fileName;
+            downloadLink.href = window.URL.createObjectURL(textFile);
+            downloadLink.style.display = "none";
+    
+            // Menambahkan elemen anchor ke dalam body
+            document.body.appendChild(downloadLink);
+    
+            // Mengklik link download secara otomatis
+            downloadLink.click();
+    
+            // Menghapus elemen anchor setelah selesai diunduh
+            document.body.removeChild(downloadLink);
+        });
+    
+        // Fungsi untuk menampilkan antrian pemesanan pada kontainer
+        function displayQueue() {
+            queueContainer.innerHTML = ""; // Mengosongkan kontainer antrian
+    
+            // Mengulang untuk setiap pemesanan dalam antrian
+            for (let i = 0; i < queue.length; i++) {
+                const booking = queue[i];
+                // Membuat output HTML untuk setiap pemesanan
+                const output = `
+                    <div class="queue-item">
+                        <h4>Booking ${i + 1}</h4>
+                        <p>Nama: ${booking.name}</p>
+                        <p>Email: ${booking.email}</p>
+                        <p>Jenis Kamar: ${booking.service}</p>
+                        <p>Tanggal Check-in: ${booking.checkin}</p>
+                        <p>Tanggal Check-out: ${booking.checkout}</p>
+                    </div>
+                `;
+                // Menambahkan output ke dalam kontainer antrian
+                queueContainer.innerHTML += output;
+            }
+        }
+    
+        // Fungsi untuk menghasilkan teks antrian pemesanan
+        function generateQueueText() {
+            let queueText = "Bukti pemesanan kamar\n\n";
+    
+            // Mengulang untuk setiap pemesanan dalam antrian
+            for (let i = 0; i < queue.length; i++) {
+                const booking = queue[i];
+                // Menambahkan informasi pemesanan ke dalam teks antrian
+                queueText += `Booking ${i + 1}:\n`;
+                queueText += `Nama: ${booking.name}\n`;
+                queueText += `Email: ${booking.email}\n`;
+                queueText += `Jenis Kamar: ${booking.service}\n`;
+                queueText += `Tanggal Check-in: ${booking.checkin}\n`;
+                queueText += `Tanggal Check-out: ${booking.checkout}\n\n`;
+            }
+    
+            return queueText; // Mengembalikan teks antrian
+        }
+    </script>
+    
+</body>
+</html>

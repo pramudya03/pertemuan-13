@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- metadata dan link ke file CSS dan JavaScript -->
+    <meta charset="utf-8"> <!-- Mengatur karakter encoding dokumen ke UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Membuat halaman responsif terhadap ukuran layar -->
+    <title>SUNSHINE HOTEL</title>
+    <link rel="stylesheet" type="text/css" href="index.css"> <!-- Menghubungkan ke file CSS eksternal -->
+    <script src="kal.js"></script> <!-- Menghubungkan ke file JavaScript eksternal -->
+</head>
+<body> 
+    <!-- Memutar video sebagai latar belakang halaman -->
+    <video autoplay muted loop id="kal">
+        <source src="bg2.mp4" type="video/mp4"> <!-- video dalam format MP4 -->
+    </video>
+    
+    <header>
+        <!-- Header halaman yang berisi judul dan navigasi -->
+        <h1>SUNSHINE HOTEL</h1> 
+        <nav>
+            <ul>
+                <!-- Daftar navigasi untuk halaman-halaman yang berbeda -->
+                <li><a href="index.html">LOBBY</a></li> <!-- Link ke halaman utama lobby -->
+                <li><a href="booking.html">RESERVASI</a></li> <!-- Link ke halaman reservasi -->
+                <li><a href="kamar.html">KETERSEDIAAN KAMAR</a></li> <!-- Link ke halaman jenis kamar -->
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Kontainer untuk kartu informasi utama -->
+    <div class="card-container">
+        <div class="card-container">
+            <!-- Gambar logo hotel -->
+            <img class="round" src="logo.jpeg" alt="Sunshine Hotel" style="width: 30%;" /> 
+            <h3>Selamat Datang di Sunshine Hotel</h3> 
+            <h6>Nikmati kenyamanan yang tiada tara dan layanan terbaik kami</h6> 
+        
+            <!-- Bagian layanan yang ditawarkan -->
+            <div class="skills">
+                <h6>Services Offered!</h6>
+                <ul>
+                    <li>Booking Room</li> 
+                    <li>Reservasi</li> 
+                    <li>View Room</li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bagian footer -->
+    <footer>
+        <p>&copy; 2024 Hotel Sunshine. All rights reserved.</p> 
+    </footer>
+</body>
+</html>

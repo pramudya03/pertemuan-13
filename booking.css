@@ -1,0 +1,112 @@
+body {
+    background-color: #304463; /* Warna latar belakang body */
+}
+
+#background-video {
+    position: fixed; /* Tetap di posisi */
+    top: 0; /* Di bagian atas layar */
+    left: 0; /* Di sebelah kiri layar */
+    width: 100%; /* Lebar 100% dari layar */
+    height: 100%; /* Tinggi 100% dari layar */
+    object-fit: cover; /* Objek video mengisi area */
+    z-index: -1; /* Z-index di bawah konten lain */
+}
+
+header {
+    display: flex; /* Menata header dengan flexbox */
+    justify-content: space-between; /* Menyusun konten header rata dengan jarak antar elemen */
+    align-items: center; /* Pusatkan konten header secara vertikal */
+    padding: 5px; /* Padding di sekitar header */
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam dengan transparansi 70% */
+    color: #fff; /* Warna teks putih */
+    font-size: 9px; /* Ukuran teks */
+    top: 0; /* Header di bagian atas layar */
+    position: fixed; /* Tetap di tempat saat digulir */
+    left: 0; /* Di sebelah kiri layar */
+    right: 0; /* Di sebelah kanan layar */
+    text-align: center; /* Teks di tengah */
+}
+
+nav ul {
+    display: flex; /* Menata navigasi dengan flexbox */
+    list-style-type: none; /* Hapus bullet list */
+    padding: 0; /* Hapus padding */
+}
+
+nav ul li {
+    margin-right: 20px; /* Jarak antar elemen navigasi */
+}
+
+nav ul li a {
+    text-decoration: none; /* Hapus dekorasi tautan */
+    color: white; /* Warna teks putih */
+}
+
+.card {
+    width: 400px; /* Lebar kartu */
+    margin: 0 auto; /* Pusatkan horizontal */
+    padding: 20px; /* Padding dalam kartu */
+    border: 1px solid rgba(0,0,0, 0.6); /* Border tipis dengan warna hitam transparan */
+    border-radius: 5px; /* Sudut border */
+    background-color: rgba(0,0,0, 0.6); /* Latar belakang hitam transparan */
+    color: white; /* Warna teks putih */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Margin bawah */
+    background-color: transparent; /* Latar belakang transparan */
+}
+
+.form-group label {
+    display: block; /* Menampilkan label sebagai block element */
+    font-weight: bold; /* Teks tebal */
+    margin-bottom: 5px; /* Margin bawah */
+    background-color: transparent; /* Latar belakang transparan */
+    padding: 5px; /* Padding */
+    border-radius: 3px; /* Sudut border */
+    color: white; /* Warna teks putih */
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%; /* Lebar penuh */
+    padding: 5px; /* Padding */
+    border: 1px solid rgba(0,0,0, 0.6); /* Border tipis dengan warna hitam transparan */
+    border-radius: 3px; /* Sudut border */
+    background-color: white; /* Warna latar belakang putih */
+}
+
+.form-group input[type="submit"] {
+    background-color: rgba(0,0,0, 0.8); /* Latar belakang hitam transparan */
+    color: white; /* Warna teks putih */
+    border: none; /* Hapus border */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer kursor */
+    border-radius: 3px; /* Sudut border */
+}
+
+.output {
+    margin-top: 20px; /* Margin atas */
+    background-color: rgba(0,0,0, 0.6); /* Latar belakang hitam transparan */
+    padding: 10px; /* Padding */
+    border-radius: 3px; /* Sudut border */
+}
+
+.output label {
+    font-weight: bold; /* Teks tebal */
+    background-color: transparent; /* Latar belakang transparan */
+    padding: 5px; /* Padding */
+    border-radius: 3px; /* Sudut border */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam dengan transparansi 70% */
+    color: #fff; /* Warna teks putih */
+    font-size: 14px; /* Ukuran teks */
+    bottom: 0; /* Di bagian bawah layar */
+    position: fixed; /* Tetap di tempat saat digulir */
+    left: 0; /* Di sebelah kiri layar */
+    right: 0; /* Di sebelah kanan layar */
+    text-align: center; /* Teks di tengah */
+    z-index: 999; /* Z-index */
+}

@@ -1,0 +1,59 @@
+header {
+    display: flex; /* Menampilkan header dengan flexbox */
+    justify-content: space-between; /* Menyusun konten header dengan jarak yang sama di antara elemen */
+    align-items: center; /* Pusatkan konten header secara vertikal */
+    padding: 5px; /* Padding di sekitar header */
+    background-color: transparent; /* Latar belakang transparan */
+    color: #fff; /* Warna teks putih */
+    font-size: 9px; /* Ukuran teks */
+    top: 0; /* Header di bagian atas layar */
+    position: fixed; /* Tetap di tempat saat digulir */
+    left: 0; /* Di sebelah kiri layar */
+    right: 0; /* Di sebelah kanan layar */
+    text-align: center; /* Teks di tengah */
+}
+
+nav ul {
+    display: flex; /* Menata navigasi dengan flexbox */
+    list-style-type: none; /* Hapus bullet list */
+    padding: 0; /* Hapus padding */
+}
+
+nav ul li {
+    margin-right: 20px; /* Jarak antar elemen navigasi */
+}
+
+nav ul li a {
+    text-decoration: none; /* Hapus dekorasi tautan */
+}
+
+.catalog-container {
+    margin: 0; /* Hapus margin */
+    display: flex; /* Menata container katalog dengan flexbox */
+    flex-wrap: wrap; /* Wrap item jika tidak cukup ruang */
+    justify-content: center; /* Pusatkan konten secara horizontal */
+    align-items: center; /* Pusatkan konten secara vertikal */
+}
+
+.catalog-kamar {
+    width: 300px; /* Lebar kontainer katalog */
+    margin: 20px; /* Margin di sekitar katalog */
+    padding: 20px; /* Padding di dalam katalog */
+    border: 1px solid rgba(0, 0, 0, 0.6); /* Border tipis dengan warna hitam transparan */
+    border-radius: 5px; /* Sudut border */
+    background-color: rgba(0, 0, 0, 0.6); /* Latar belakang hitam transparan */
+    color: rgba(255, 255, 255, 0.8); /* Warna teks putih transparan */
+}
+
+.catalog-kamar img {
+    width: 50%; /* Lebar gambar */
+    border-radius: 5px; /* Sudut border */
+}
+
+.catalog-kamar h3 {
+    margin-top: 10px; /* Margin atas untuk judul */
+}
+
+.catalog-kamar p {
+    margin-bottom: 10px; /* Margin bawah untuk paragraf */
+}
